@@ -1,0 +1,95 @@
+.userlist{
+    margin: 20px 0;    
+
+    &__header {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr repeat(4, 1fr);
+        background-color: antiquewhite;
+        padding: 4px;
+    }
+    &__name{
+        grid-column-start: 2;        
+    }
+    &__email{
+        grid-column-start: 3;        
+    }
+    &__roles{
+        grid-column-start: 4;        
+    }
+    &__date{
+        grid-column-start: 5;
+        justify-self: center;
+    }
+    &__balance{
+        grid-column-start: 6;
+        justify-self: center;
+    }
+    &__status{
+        grid-column-start: 7;
+        justify-self: center;
+    }
+}
+.userlist > div:nth-child(2){
+    padding: 2px 3px;
+}
+.userlist > div:nth-child(2)> div:nth-child(2n){
+    background-color: rgba(148, 148, 148, 0.25);
+}
+
+.userlist > div:nth-child(2)> div:nth-child(2n+1){
+    background-color: rgba(148, 148, 148, 0.5);
+}
+// .filelist > div:nth-child(2n+2){
+//     background-color: rgba(68, 194, 36, 0.788);
+// }
+
+// .filelist div > div:first-child{
+//     background-color: antiquewhite;
+// }
+
+.userlist > div:last-child{
+    background-color: rgb(255, 255, 255);
+}
+
+.userplate{
+    display: flex;    
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.nofiles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+// .lines > div {
+//     padding: 10px;
+// }
+
+// .lines > div:nth-child(2n) {
+//     padding: 10px;
+//     background-color: aqua;
+// }
+
+// .lines > div:nth-child(2n+1) {
+//     padding: 10px;
+//     background-color: rgb(0, 255, 55);
+// }
+
+
+.file-enter-active{
+    animation: file-enter 500ms forwards;
+}
+
+@keyframes file-enter{
+    0%{
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

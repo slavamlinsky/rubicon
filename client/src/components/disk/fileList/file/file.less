@@ -1,0 +1,110 @@
+@import "../../../../utils/colors";
+
+.file{    
+    display: grid;
+    grid-template-columns: 1fr 4fr repeat(4, 1fr);    
+    padding: 4px;
+    margin: 5px 0;
+    //border-bottom: solid 1px @font-color;
+    align-items: center;
+
+    &:hover{
+        transform: scale(1.005);
+        cursor: pointer;
+        //border-bottom: 1px solid red;
+    }
+    
+    &__icon{
+        justify-self: center;        
+        width: 50px;
+    }
+    &__img{
+        width: 50%;
+    }
+    
+    &__name{
+        grid-column-start: 2;
+    }
+    &__date{
+        grid-column-start: 5;
+        justify-self: center;
+    }
+    &__size{
+        grid-column-start: 6;
+        justify-self: center;
+    }
+
+    &__btn{
+        display: none;        
+        padding: 3px 4px;
+        cursor: pointer;
+    }
+    &__delete{
+        width: 70%;
+        background-image: url('../../../../assets/img/delete_icon.svg');  
+        background-size: contain;
+        background-repeat: no-repeat;    
+        background-position: left center;
+        border: 1px solid @font-color;
+        padding-left: 20px;
+        margin: auto;
+    }
+    &__download{
+        width: 90%;
+        background-image: url('../../../../assets/img/download_icon.svg');  
+        background-size: contain;
+        background-repeat: no-repeat;    
+        background-position: left center;
+        border: 1px solid @font-color;     
+        padding-left: 22px;   
+        margin: auto;
+    }
+    &:hover &__date{
+        grid-column-start: 3;
+    }
+    &:hover &__size{
+        grid-column-start: 4;
+    }
+    &:hover &__download{
+        grid-column-start: 5;
+        display: block;
+    }
+    &:hover &__delete{
+        grid-column-start: 6;
+        display: block;
+    }
+}
+
+.file-plate{
+    width: 190px;
+    // height: 190px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__icon{
+        width: 175px;    
+        text-align: center;                 
+    }
+    &__name{
+        font-size: 0.7em;
+    }
+    &__btns{
+       
+        display: none;
+    }
+    &__btns button{
+        margin-top: 4px;
+        font-size: 0.875em;
+        padding: 4px 5px 4px 20px;
+        width: 100%;
+    }
+
+    &:hover &__btns{
+        display: block;
+        display: flex;
+        flex-direction: column;
+    }
+
+}

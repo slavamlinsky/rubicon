@@ -1,0 +1,80 @@
+@import "../../../utils/colors";
+
+
+.uploader{
+    background-color: @font-color;
+    width: 300px;
+    height: 350px;
+    position: fixed;    
+    bottom: 0;
+    right: 0;
+    padding: 10px 10px;
+    border-radius: 10px 0px 0px 0px;
+    overflow-y: auto;
+ 
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title{
+        font-size: 16px;
+        color: @background-color;
+    }
+
+    &__close{
+        border: none;
+        padding: 3px;
+        color: @background-color;
+        background: none;
+        cursor: pointer;
+
+    }
+}
+.uploader::-webkit-scrollbar {
+    width: 5px;    
+    background-color: #aaa; /* or add it to the track */
+  }
+  .uploader::-webkit-scrollbar-thumb{
+    background: rgb(7, 1, 95) ;    
+  }
+
+.upload-file{
+    background-color: @background-color;
+    border-radius: 3px;
+    margin: 5px 0;
+    padding: 3px 5px;
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__name{
+        font-size: 0.85em;
+    }
+    &__remove{
+        border: none;
+        padding: 0px;
+        cursor: pointer;
+    }
+
+    &__progress-bar{
+        height: 0.75em;
+        border-radius: 3px;
+        background-color: @font-color;
+        display: flex;
+        margin: 3px 0;
+    }
+    &__upload-bar{
+        background-color: green;
+        // width: 75%;
+        border-radius: 3px;
+    }
+    &__percent{
+        color: @background-color;
+        left:10%;
+        font-size: 0.7em;
+        position: absolute;
+    }
+}

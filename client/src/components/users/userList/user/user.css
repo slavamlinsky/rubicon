@@ -1,0 +1,118 @@
+.user {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr repeat(4, 1fr);
+  padding: 4px;
+  margin: 5px 0;
+  align-items: center;
+}
+.user:hover {
+  transform: scale(1.005);
+}
+.user__avatar {
+  justify-self: center;
+  width: 70px;
+}
+.user__img {
+  width: 70%;
+  border-radius: 15px;
+}
+.user__name {
+  grid-column-start: 2;
+  font-weight: bold;
+}
+.user__email {
+  grid-column-start: 3;
+}
+.user__roles {
+  grid-column-start: 4;
+}
+.user__roles div {
+  border-radius: 20px;
+  width: 25px;
+  height: 25px;
+  padding-top: 4px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  color: aliceblue;
+}
+.user__roles div.user {
+  background-color: forestgreen;
+}
+.user__roles div.admin {
+  background-color: tomato;
+}
+.user__name small {
+  font-size: 0.75em;
+  font-weight: normal;
+}
+.user__date {
+  grid-column-start: 5;
+  justify-self: center;
+}
+.user__btn {
+  display: none;
+  padding: 3px 4px;
+}
+.user__delete {
+  width: 70%;
+  background-image: url('../../../../assets/img/delete_icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  border: 1px solid #356CA4;
+  padding-left: 20px;
+  margin: auto;
+}
+.user__download {
+  width: 90%;
+  background-image: url('../../../../assets/img/download_icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  border: 1px solid #356CA4;
+  padding-left: 22px;
+  margin: auto;
+}
+.user:hover .user__download {
+  grid-column-start: 5;
+  display: block;
+}
+.user:hover .user__delete {
+  grid-column-start: 6;
+  display: block;
+}
+.user-plate {
+  width: 190px;
+  height: 200px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.user-plate__icon {
+  width: 100px;
+}
+.user-plate__img {
+  height: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+}
+.user-plate__name {
+  font-size: 0.7em;
+}
+.user-plate__btns {
+  display: none;
+}
+.user-plate__btns button {
+  margin-top: 4px;
+  font-size: 0.875em;
+  padding: 4px 5px 4px 5px;
+  width: 100%;
+}
+.user-plate:hover .user-plate__btns {
+  display: block;
+  display: flex;
+  flex-direction: column;
+}

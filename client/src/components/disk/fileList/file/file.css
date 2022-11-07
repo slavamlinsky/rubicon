@@ -1,0 +1,96 @@
+.file {
+  display: grid;
+  grid-template-columns: 1fr 4fr repeat(4, 1fr);
+  padding: 4px;
+  margin: 5px 0;
+  align-items: center;
+}
+.file:hover {
+  transform: scale(1.005);
+  cursor: pointer;
+}
+.file__icon {
+  justify-self: center;
+  width: 50px;
+}
+.file__img {
+  width: 50%;
+}
+.file__name {
+  grid-column-start: 2;
+}
+.file__date {
+  grid-column-start: 5;
+  justify-self: center;
+}
+.file__size {
+  grid-column-start: 6;
+  justify-self: center;
+}
+.file__btn {
+  display: none;
+  padding: 3px 4px;
+  cursor: pointer;
+}
+.file__delete {
+  width: 70%;
+  background-image: url('../../../../assets/img/delete_icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  border: 1px solid #356CA4;
+  padding-left: 20px;
+  margin: auto;
+}
+.file__download {
+  width: 90%;
+  background-image: url('../../../../assets/img/download_icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  border: 1px solid #356CA4;
+  padding-left: 22px;
+  margin: auto;
+}
+.file:hover .file__date {
+  grid-column-start: 3;
+}
+.file:hover .file__size {
+  grid-column-start: 4;
+}
+.file:hover .file__download {
+  grid-column-start: 5;
+  display: block;
+}
+.file:hover .file__delete {
+  grid-column-start: 6;
+  display: block;
+}
+.file-plate {
+  width: 190px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.file-plate__icon {
+  width: 175px;
+  text-align: center;
+}
+.file-plate__name {
+  font-size: 0.7em;
+}
+.file-plate__btns {
+  display: none;
+}
+.file-plate__btns button {
+  margin-top: 4px;
+  font-size: 0.875em;
+  padding: 4px 5px 4px 20px;
+  width: 100%;
+}
+.file-plate:hover .file-plate__btns {
+  display: block;
+  display: flex;
+  flex-direction: column;
+}

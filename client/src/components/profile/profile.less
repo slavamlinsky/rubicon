@@ -1,0 +1,108 @@
+@import "../../utils/colors";
+
+.updated_success{
+    color: #6db608;
+    background-image: url('./../../assets/img/success-icon.svg'); 
+    background-size: 16px;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    width: 470px;        
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px 20px;    
+    margin: 5em auto;   
+
+    &__header{
+        color: font-color;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin: .5em 0 1em;
+    }
+    &__row{
+        display: flex;
+        width: 100%;
+        margin-bottom: 1.5em;
+    }
+
+    &__avatar img{
+        border-radius: 15px;
+    }
+    
+
+    &__label{
+        width: 275px;
+        line-height: 2em;
+    }
+    &__field{
+        width: 100%;
+    }
+
+    &__avalabel{        
+        border-bottom: 1px dashed @font-color;
+        margin-left: 10px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    &__avalabel:hover{        
+        border-bottom: 1px dashed @hover-color;
+        color: @hover-color;
+        margin-left: 10px;
+    }
+
+    &__avaimage{
+        display: none;        
+    }
+    &__input{
+        padding: 3px 10px;
+        width: 100%;
+    }
+    &__password{
+        height: 1em;
+        font-size: 2em;        
+        padding: 0px 10px 4px;
+        width: 100%;
+    }
+    &__savebtn{        
+        box-shadow: 0 1px 2px 1px #0000;
+        background: linear-gradient(180deg, #9ebd13 0%, #6db608 100%);
+        border: none;
+        padding: .875em 2em;
+        color: white;
+        border-radius: 15px;        
+        
+        
+        
+        transition-duration: .1s;        
+    }
+    &__savebtn:hover{
+        cursor: pointer;       
+        //border: 2px solid @font-color;
+        box-shadow: 0 1px 5px 3px #0005;
+        background: linear-gradient(180deg, #9ebd13 0%, #008552 100%);
+        
+    }
+}
+.profile>div:last-child{
+    // background-color: aqua;
+    margin-bottom: 0px;
+}
+.center{
+    justify-content: center;
+    display: flex;
+}
+
+.upload__description{
+    font-size: 0.85em;
+}
+
+.delete-avatar{
+    padding: 2px 4px;
+    font-size: 0.875em;
+}

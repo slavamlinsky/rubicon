@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #356CA4;
+}
+body {
+  background: linear-gradient(45deg, #e3ffe7 0%, #d9e7ff 100%);
+}
+#root {
+  width: 100%;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrap {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh);
+  padding-top: 120px;
+}
