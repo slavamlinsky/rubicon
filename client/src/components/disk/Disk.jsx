@@ -15,7 +15,7 @@ const Disk = () => {
     const loader = useSelector(state => state.app.loader)
 
     const [dragEnter, setDragEnter] = useState(false)
-    const [sort, setSort] = useState('type')
+    const [sort, setSort] = useState('date')
 
     const [searchName, setSearchName] = useState('')
     const [searchTimeout, setSearchTimeout] = useState(false)
@@ -123,9 +123,10 @@ const Disk = () => {
                         className="disk__select" 
                         value={sort} 
                         onChange={(e) => setSort(e.target.value)}>
-                        <option value="name">По имени</option>
-                        <option value="type">По типу</option>
                         <option value="date">По дате</option>
+                        <option value="status">По статусу</option>
+                        <option value="name">По имени</option>                        
+                        <option value="type">По типу</option>
                     </select>
                 </div>
                 <div className='disk__view'>

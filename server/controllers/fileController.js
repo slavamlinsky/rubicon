@@ -46,18 +46,24 @@ class FileController {
             parent: req.query.parent,
           }).sort({ name: 1 });
           break;
-        case "type":
+        case "status":
           files = await File.find({
             user: req.user.id,
             parent: req.query.parent,
-          }).sort({ type: 1 });
+          }).sort({ status: 1 });
           break;
         case "date":
           files = await File.find({
             user: req.user.id,
             parent: req.query.parent,
-          }).sort({ date: 1 });
+          }).sort({ date: -1 });
           break;
+          case "type":
+            files = await File.find({
+              user: req.user.id,
+              parent: req.query.parent,
+            }).sort({ type: 1 });
+            break;
         default:
           files = await File.find({
             user: req.user.id,
@@ -196,6 +202,27 @@ class FileController {
     }
   }
 
+  async sendFile(req, res) {
+    console.log("send file");
+    try {
+      const file = await File.findOne({ _id: req.query.id, user: req.user.id });
+      if (!file) {
+        return res.status(400).json({ message: "File not found" });
+      }
+      
+      file.status = "SENT";
+      
+      console.log(file);
+      
+      await file.save();
+      return res.json(file);
+
+    } catch (e) {
+      console.log(e);
+      return res.status(400).json({ message: "Sending File error" });
+    }
+  }
+
   async searchFile(req, res) {
     try {
       const searchName = req.query.search;
@@ -255,7 +282,7 @@ class FileController {
   async updateProfile(req, res) {
     try {
       const { name, email } = req.body;
-      console.log(name + email);
+      //console.log(name + email);
 
       const user = await User.findById(req.user.id);
       user.name = name;
@@ -271,6 +298,8 @@ class FileController {
       return res.status(400).json({ message: "Updating Profile error" });
     }
   }
+
+  
 }
 
 module.exports = new FileController();

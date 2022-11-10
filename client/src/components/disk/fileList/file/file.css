@@ -1,6 +1,6 @@
 .file {
   display: grid;
-  grid-template-columns: 1fr 4fr repeat(4, 1fr);
+  grid-template-columns: 1fr 4fr repeat(5, 1fr);
   padding: 4px;
   margin: 5px 0;
   align-items: center;
@@ -19,12 +19,35 @@
 .file__name {
   grid-column-start: 2;
 }
-.file__date {
+.file__status {
   grid-column-start: 5;
   justify-self: center;
 }
-.file__size {
+.file__status div {
+  font-size: 0.825em;
+  color: whitesmoke;
+  padding: 3px 5px;
+  justify-self: center;
+  text-align: center;
+}
+.file__status .new {
+  background-color: green;
+}
+.file__status .sent {
+  background-color: #ff993a;
+}
+.file__status .rejected {
+  background-color: #ff223f;
+}
+.file__status .accepted {
+  background-color: #000cb4;
+}
+.file__date {
   grid-column-start: 6;
+  justify-self: center;
+}
+.file__size {
+  grid-column-start: 7;
   justify-self: center;
 }
 .file__btn {
@@ -52,18 +75,38 @@
   padding-left: 22px;
   margin: auto;
 }
+.file__send {
+  background-image: url('../../../../assets/img/sendfile.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  width: 100%;
+  border: 1px solid #356CA4;
+  padding-left: 25px;
+  padding-right: 10px;
+  margin: auto;
+}
+.file:hover .file__status div {
+  display: none;
+}
 .file:hover .file__date {
-  grid-column-start: 3;
+  grid-column-start: 6;
+  display: none;
 }
 .file:hover .file__size {
-  grid-column-start: 4;
+  grid-column-start: 5;
+  display: none;
 }
-.file:hover .file__download {
+.file:hover .file__send {
   grid-column-start: 5;
   display: block;
 }
-.file:hover .file__delete {
+.file:hover .file__download {
   grid-column-start: 6;
+  display: block;
+}
+.file:hover .file__delete {
+  grid-column-start: 7;
   display: block;
 }
 .file-plate {

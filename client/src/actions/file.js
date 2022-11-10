@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { hidePreloader, showPreloader } from '../reducers/appReducer';
-import { setFiles, addFile, deleteFileAction } from '../reducers/fileReducer';
+import { setFiles, addFile, deleteFileAction, sendFileAction } from '../reducers/fileReducer';
 import { addUploadFile, changeUploadFile, showUploader } from '../reducers/uploadReducer';
 
 import {API_URL} from "../config";
@@ -177,6 +177,35 @@ export function deleteFile(file) {
             
         } catch (e) {
             console.log(e.response.data.message)            
+        }
+    }
+}
+
+export function sendFile (file) {
+    return async dispatch => {
+        try {
+            const params = {file}
+            const response = await axios.put(`${API_URL}api/files/send?id=${file._id}`, params, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            })    
+
+            //console.log(response.data);
+            //dispatch(sendFileAction(file._id))
+            
+            if(response.status===200){
+                alert("Статус файла изменен успешно!")                                
+            }
+
+            // if(window.confirm("Вы уверены, что хотите удалить?")){
+            //     dispatch(deleteFileAction(file._id))
+            // }            
+        } catch (e) {
+            console.log(e)            
+            console.log(e.response)            
+        } finally{
+            dispatch(sendFileAction(file._id))                
         }
     }
 }

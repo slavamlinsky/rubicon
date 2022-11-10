@@ -98,6 +98,7 @@ const Navbar = () => {
         {isAuth && isActivated && <div className='navbar__menu'>
           {/* Кнопочки: меню (user, admin) <NavLink to="/disk">Файлы</NavLink> | (admin) <NavLink to="/users">Пользователи</NavLink> | <NavLink to="/templates">Шаблоны</NavLink> | <NavLink to="/balance">Баланс</NavLink> */}
           <div className='link'><NavLink to="/disk">Ваши файлы</NavLink></div> 
+          <div className='link'><NavLink to="/files">Все файлы (Admin)</NavLink></div> 
           <div className='link'><NavLink to="/users">Пользователи</NavLink></div>  
           {/* <div className='link'><NavLink to="/balance">Баланс</NavLink></div>  */}
         </div>}

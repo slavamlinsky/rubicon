@@ -3,19 +3,23 @@
 }
 .filelist__header {
   display: grid;
-  grid-template-columns: 1fr 4fr repeat(4, 1fr);
+  grid-template-columns: 1fr 4fr repeat(5, 1fr);
   background-color: antiquewhite;
   padding: 4px;
 }
 .filelist__name {
   grid-column-start: 2;
 }
-.filelist__date {
+.filelist__status {
   grid-column-start: 5;
   justify-self: center;
 }
-.filelist__size {
+.filelist__date {
   grid-column-start: 6;
+  justify-self: center;
+}
+.filelist__size {
+  grid-column-start: 7;
   justify-self: center;
 }
 .filelist > div:nth-child(2) {

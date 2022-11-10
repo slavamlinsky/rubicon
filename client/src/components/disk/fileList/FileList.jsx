@@ -51,6 +51,7 @@ const FileList = () => {
         <div className="filelist">
             <div className="filelist__header">
                 <div className="filelist__name">Имя файла</div>
+                <div className="filelist__status">Статус</div>
                 <div className="filelist__date">Дата загрузки</div>
                 <div className="filelist__size">Размер</div>
             </div>

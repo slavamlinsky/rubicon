@@ -4,10 +4,9 @@ const ADD_FILE="ADD_FILE"
 const SET_POPUP_DISPLAY="SET_POPUP_DISPLAY"
 const PUSH_TO_STACK="PUSH_TO_STACK"
 const POP_STACK="POP_STACK"
+const SEND_FILE="SEND_FILE"
 const DELETE_FILE="DELETE_FILE"
 const SET_VIEW="SET_VIEW"
-
-
 
 const defaultState ={
     files: [],
@@ -33,6 +32,13 @@ export default function fileReducer(state = defaultState, action){
             return {...state, currentDir: state.dirStack[state.dirStack.length-1], dirStack: state.dirStack.slice(0, state.dirStack.length-1)}
         case DELETE_FILE:            
             return {...state, files: [...state.files.filter(file => file._id !== action.payload)]}
+        case SEND_FILE:  // Изменяем статус файла на SENT (отправлен / на проверке) после нажатия кнопки SEND
+            return {...state, files: [...state.files.map(file => (
+                file._id === action.payload
+                  ? { ...file, status: 'SENT' }
+                  : file
+              ))]};
+
         case SET_VIEW:            
             return {...state, view: action.payload}
         default:
@@ -47,4 +53,5 @@ export const setPopupDisplay = (display) => ({type: SET_POPUP_DISPLAY, payload: 
 export const pushToStack = (dir) => ({type: PUSH_TO_STACK, payload: dir})
 export const popStack = () => ({type: POP_STACK})
 export const deleteFileAction = (dirId) => ({type: DELETE_FILE, payload: dirId})
+export const sendFileAction = (fileId) => ({type: SEND_FILE, payload: fileId})
 export const setFileView = (payload) => ({type: SET_VIEW, payload})
